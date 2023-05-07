@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { authContext } from "../../context/authentication_context";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const authCtx = useContext(authContext);
 
+  const { login } = authCtx;
   const logUserIn = (event) => {
+    login();
     event.preventDefault();
   };
   return (
