@@ -7,7 +7,6 @@ export const authContext = createContext();
 const AuthContextProvider = ({ children }) => {
   const login = async (data) => {
     const url = getAuthEndPoint("login");
-    console.log(url);
     try {
       const login = await axios.post(
         "http://localhost:8080/api/5words/v1/auth/login",
