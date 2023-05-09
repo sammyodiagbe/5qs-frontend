@@ -12,7 +12,17 @@ const AuthContextProvider = ({ children }) => {
         "http://localhost:8080/api/5words/v1/auth/login",
         data
       );
+
       console.log(login.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const createAccount = async (data) => {
+    const url = getAuthEndPoint("create-account");
+    try {
+      const createAcc = await axios.post(url, data);
     } catch (error) {
       console.log(error);
     }
